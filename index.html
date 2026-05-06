@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhichForms — The paperwork you need, explained.</title>
+    <meta name="description" content="Stop searching for forms. Get plain English explanations, deadlines, and official download links for IRS, USCIS, and state forms.">
+    <link rel="canonical" href="https://whichforms.com/">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://whichforms.com/">
+    <meta property="og:title" content="WhichForms — The paperwork you need, explained.">
+    <meta property="og:description" content="Plain English explanations, deadlines, and official download links for IRS, USCIS, and state forms.">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="WhichForms — Government Forms Explained">
+    <meta name="twitter:description" content="Stop searching for forms. Get plain English explanations and official download links for IRS, USCIS, and state forms.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --accent: #f59e0b;
+            --bg: #f8fafc;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.8);
+            --border: #e2e8f0;
+            --radius: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: var(--glass);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            padding: 8rem 1.5rem 6rem;
+            text-align: center;
+            background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.05), transparent),
+                        radial-gradient(circle at bottom left, rgba(245, 158, 11, 0.05), transparent);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: #1e293b;
+        }
+
+        h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-sub {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 1.5rem 2.5rem;
+            padding-right: 12rem;
+            font-size: 1.25rem;
+            border: 2px solid var(--border);
+            border-radius: 99px;
+            outline: none;
+            background: var(--white);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .search-bar:focus {
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.15);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 99px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .search-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-50%) scale(1.02);
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 6rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            letter-spacing: -0.02em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+            transform-origin: left;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px -15px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+
+        .card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 4rem;
+        }
+
+        .footer-brand {
+            grid-column: span 2;
+        }
+
+        .footer-logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+            display: block;
+            text-decoration: none;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer-desc {
+            opacity: 0.6;
+            margin-bottom: 2rem;
+            max-width: 300px;
+        }
+
+        .footer-links h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 2rem;
+            opacity: 0.4;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 4rem auto 0;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            opacity: 0.4;
+            font-size: 0.8rem;
+        }
+
+        .search-results {
+            position: absolute;
+            top: 110%;
+            left: 0;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px -15px rgba(0,0,0,0.2);
+            z-index: 1001;
+            max-height: 400px;
+            overflow-y: auto;
+            display: none;
+            padding: 1rem;
+        }
+
+        .search-result-item {
+            padding: 1rem;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .search-result-item:hover {
+            background: var(--bg);
+        }
+
+        .search-result-info h4 {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .search-result-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding-top: 6rem; }
+            .search-bar { padding-right: 2.5rem; padding-bottom: 5rem; border-radius: 30px; }
+            .search-btn { position: relative; width: 100%; top: auto; right: auto; transform: none; margin-top: -4.5rem; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">Which<span>Forms</span></a>
+        <nav>
+            <a href="#" data-i18n="nav.agencies">Agencies</a>
+            <a href="#" data-i18n="nav.situations">Situations</a>
+            <a href="#" data-i18n="nav.identity">Identity</a>
+            <a href="#" data-i18n="nav.about">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h1 data-i18n="hero.title">The paperwork you need, <span>explained.</span></h1>
+            <p class="hero-sub" data-i18n="hero.subtitle">Stop searching for forms. Get plain English explanations, deadlines, and official download links in one place.</p>
+            
+            <div class="search-container">
+                <input type="text" class="search-bar" data-i18n="hero.placeholder" placeholder="Search for a form (e.g. W-9, I-485, LLC)">
+                <button class="search-btn" data-i18n="hero.cta">Search Forms</button>
+                <div class="search-results" id="searchResults"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                <h2 data-i18n="nav.situations">Popular Situations</h2>
+            </div>
+            <div class="grid" id="situationsGrid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                <h2 data-i18n="nav.identity">Identity & Documents</h2>
+            </div>
+            <div class="grid" id="identityGrid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="/" class="footer-logo">Which<span>Forms</span></a>
+                <p class="footer-desc">Making government paperwork understandable for everyone. Plain English explanations of over 500+ official forms.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Network</h4>
+                <ul>
+                    <li><a href="https://boringsearch.com">Boring Search</a></li>
+                    <li><a href="https://obdvault.com">OBD Vault</a></li>
+                    <li><a href="https://ispermitrequired.com">IsPermitRequired</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="/privacy.html" data-i18n="footer.privacy">Privacy Policy</a></li>
+                    <li><a href="/terms.html" data-i18n="footer.terms">Terms of Service</a></li>
+                    <li><a href="/affiliate.html" data-i18n="footer.disclosure">Affiliate Disclosure</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Sovereign Ridge Partners LLC. Registered in Wyoming. <span data-i18n="footer.allRights">All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="i18n.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const situationsGrid = document.getElementById('situationsGrid');
+            const identityGrid = document.getElementById('identityGrid');
+            const searchBar = document.querySelector('.search-bar');
+            const searchResults = document.getElementById('searchResults');
+
+            // Populate Situations
+            if (window.situations) {
+                window.situations.slice(0, 6).forEach(sit => {
+                    const card = document.createElement('a');
+                    card.href = `#`;
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <div class="card-tag">${sit.category}</div>
+                        <div class="card-title">${sit.title}</div>
+                        <p class="card-desc">${sit.plain_english}</p>
+                        <div class="card-footer">View Required Forms →</div>
+                    `;
+                    situationsGrid.appendChild(card);
+                });
+            }
+
+            // Populate Identity
+            if (window.identityDocs) {
+                window.identityDocs.slice(0, 6).forEach(doc => {
+                    const card = document.createElement('a');
+                    card.href = `#`;
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <div class="card-tag">${doc.category}</div>
+                        <div class="card-title">${doc.name}</div>
+                        <p class="card-desc">${doc.plain_english}</p>
+                        <div class="card-footer">How to Apply →</div>
+                    `;
+                    identityGrid.appendChild(card);
+                });
+            }
+
+            // Simple Search Logic
+            searchBar.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                if (query.length < 2) {
+                    searchResults.style.display = 'none';
+                    return;
+                }
+
+                const forms = [
+                    ...(window.irsForms || []),
+                    ...(window.uscisForms || []),
+                    ...(window.ssaForms || []),
+                    ...(window.businessForms || [])
+                ];
+
+                const filtered = forms.filter(f => 
+                    f.name.toLowerCase().includes(query) || 
+                    (f.form_number && f.form_number.toLowerCase().includes(query)) ||
+                    f.slug.toLowerCase().includes(query)
+                ).slice(0, 8);
+
+                if (filtered.length > 0) {
+                    searchResults.innerHTML = filtered.map(f => `
+                        <div class="search-result-item">
+                            <div class="search-result-info">
+                                <h4>${f.form_number ? f.form_number + ': ' : ''}${f.name}</h4>
+                                <p>${f.agency}</p>
+                            </div>
+                            <div style="font-weight:bold; color:var(--primary)">View →</div>
+                        </div>
+                    `).join('');
+                    searchResults.style.display = 'block';
+                } else {
+                    searchResults.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!searchBar.contains(e.target) && !searchResults.contains(e.target)) {
+                    searchResults.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
