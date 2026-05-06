@@ -12,4 +12,3 @@ healthcheckTimeout = 60
 [environments.production.variables]
 NODE_ENV = \"production\"
 PORT = \"3000\"
-DATABASE_URL = \"postgresql://postgres:aOUYoSJZsIHiOkDZALcNSabAnmGLjlzP@postgres.railway.internal:5432/railway\"
