@@ -334,6 +334,93 @@
   font-size: 0.8rem;
 }
 
+.langSelector {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.langSelector button {
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.2s;
+}
+
+.langSelector button:hover {
+  background: rgba(37, 99, 235, 0.1);
+}
+
+.langActive {
+  background: rgba(37, 99, 235, 0.15) !important;
+  border-color: #2563eb !important;
+}
+
+.agencyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.agencyCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem;
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  text-decoration: none;
+  color: #0f172a;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.agencyCard:hover {
+  border-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15);
+}
+
+.agencyEmoji {
+  font-size: 2.5rem;
+}
+
+.agencySub {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 400;
+}
+
+.footerNetwork {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.footerNetwork a {
+  color: #64748b;
+  text-decoration: none;
+}
+
+.footerNetwork a:hover {
+  color: #2563eb;
+}
+
+.footerCopy {
+  grid-column: 1 / -1;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 2rem;
+}
+
 .langSwitcher {
   position: fixed;
   bottom: 24px;
